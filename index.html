@@ -676,10 +676,30 @@
   }
 
   document.querySelectorAll('.langbtn').forEach(function(btn){
-    btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-lang')); });
+    btn.addEventListener('click', function(){ applyLang(btn.getAttribute('data-lang')); qetAfterLang(btn.getAttribute('data-lang')); });
   });
 
-  applyLang('de');
+  // Sprache aus dem Link (?lang=ro) oder vom letzten Besuch übernehmen, sonst Deutsch
+  var QET_LANGS = ['de', 'en', 'tr', 'ro'];
+  function qetAfterLang(lang){
+    try { window.localStorage.setItem('qet-lang', lang); } catch (e) {}
+    var pre = lang === 'de' ? '' : '/' + lang;
+    document.querySelectorAll('a[href]').forEach(function(a){
+      var h0 = a.getAttribute('data-href0') || a.getAttribute('href');
+      var m = h0.match(/^https:\/\/qet\.ag(\/.*)?$/);
+      if (m) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://qet.ag' + pre + (m[1] || '/')); return; }
+      if (/^https:\/\/(www\.)?qet-masterclass\.com\/?$/.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://www.qet-masterclass.com' + pre); }
+    });
+  }
+  var startLang = 'de';
+  try {
+    var qLang = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
+    var sLang = window.localStorage.getItem('qet-lang') || '';
+    if (QET_LANGS.indexOf(qLang) > -1) { startLang = qLang; }
+    else if (QET_LANGS.indexOf(sLang) > -1) { startLang = sLang; }
+  } catch (e) {}
+  applyLang(startLang);
+  qetAfterLang(startLang);
   updateCalc();
 
   // Mobile nav: hamburger toggles the collapsible link panel.
