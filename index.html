@@ -689,6 +689,7 @@
       var m = h0.match(/^https:\/\/qet\.ag(\/.*)?$/);
       if (m) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://qet.ag' + pre + (m[1] || '/')); return; }
       if (/^https:\/\/(www\.)?qet-masterclass\.com\/?$/.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://www.qet-masterclass.com' + pre); }
+      if (/^https:\/\/(qet-kultur-kompass[^\/]*\.vercel\.app|app\.qet-compass\.com)\//.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', h0.split('?')[0] + '?lang=' + lang); }
     });
   }
   var startLang = 'de';
