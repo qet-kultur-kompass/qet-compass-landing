@@ -16,6 +16,7 @@
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-400-normal.woff2) format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/fonts/ibm-plex-mono-latin-500-normal.woff2) format('woff2')}
   @media (max-width:1180px){.nav-claim{display:none !important;}}
+  sup.reg{font-size:.42em;vertical-align:top;position:relative;top:.2em;margin-left:.04em;line-height:0;font-weight:600;}
 </style>
 <style>
   :root{
@@ -679,6 +680,26 @@
     if (QET_LANGS.indexOf(qLang) > -1) { startLang = qLang; }
     else if (QET_LANGS.indexOf(sLang) > -1) { startLang = sLang; }
   } catch (e) {}
+  // QET mit hochgestelltem ® in Überschriften (nach jedem Sprachwechsel)
+  function qetReg(){
+    document.querySelectorAll('h1,h2,h3,h4').forEach(function(h){
+      if (h.querySelector('sup.reg')) return;
+      var w = document.createTreeWalker(h, NodeFilter.SHOW_TEXT), n, list = [];
+      while ((n = w.nextNode())) list.push(n);
+      list.forEach(function(n){
+        var t = n.nodeValue, re = /(^|[^\w-])QET(?![\w\u00AE-])/g, m, last = 0, frag = null;
+        while ((m = re.exec(t))) {
+          frag = frag || document.createDocumentFragment();
+          var end = m.index + m[0].length;
+          frag.appendChild(document.createTextNode(t.slice(last, end)));
+          var sup = document.createElement('sup'); sup.className = 'reg'; sup.textContent = '\u00AE'; frag.appendChild(sup);
+          last = end;
+        }
+        if (frag) { frag.appendChild(document.createTextNode(t.slice(last))); n.parentNode.replaceChild(frag, n); }
+      });
+    });
+  }
+  var _applyLang = applyLang; applyLang = function(l){ _applyLang(l); qetReg(); };
   applyLang(startLang);
   qetAfterLang(startLang);
   updateCalc();
