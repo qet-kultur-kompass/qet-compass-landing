@@ -139,6 +139,15 @@
     .nav-links .langsel{position:absolute !important;right:16px;bottom:4px;padding:0 !important;border:none !important;background:#fff;}
     .langsel-btn{padding:0 8px !important;min-width:38px;height:38px;font-size:13px;}
   }
+  .m-sales{max-width:340px;margin-top:8px;}
+  .m-sales summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;background:#1F5AF0;color:#fff;font-weight:600;font-size:15px;padding:10px 16px;border-radius:6px;min-height:44px;}
+  .m-sales summary::-webkit-details-marker{display:none;}
+  .m-sales summary::after{content:"▾";font-size:12px;}
+  .m-sales[open] summary::after{content:"▴";}
+  .m-sales summary:hover{background:#1747C4;}
+  .m-sales-in{margin-top:10px;padding:14px 16px;background:#F3F5F9;border:1px solid var(--line);border-radius:6px;font-size:14px;line-height:1.5;color:var(--ink-2);}
+  .m-sales-in p{margin:0 0 8px;} .m-sales-in p:last-child{margin:0;}
+  .m-sales-in a{color:var(--ink);font-weight:600;text-decoration:underline;}
 </style>
 </head>
 <body>
@@ -329,6 +338,7 @@
         <span class="mono" style="font-size:13px;line-height:1.5;color:var(--ink-3);">Quality, Ethics, Transparency.<br>Our Compass. Your course.</span>
         <span style="font-size:14px;color:var(--ink-3);" data-i18n="footer_tagline">Teil von QET audit — Software, Audits, Zertifikate</span>
         <span style="font-size:14px;color:var(--ink-3);" data-i18n="footer_trademark">QET® — Wortmarke geschützt in Deutschland und Europa</span>
+        <details class="m-sales"><summary>Sales Support</summary><div class="m-sales-in"><p data-i18n="n_sales_p">Unser Serviceteam von Kaden Global berät Sie bei Fragen zu Bestellungen und Abrechnung.</p><p><span data-i18n="n_phone">Telefon</span>: <a href="tel:+499135799471">+49 (0)9135 799471</a><br>E-Mail: <a href="mailto:sales@qet.de">sales@qet.de</a></p></div></details>
       </div>
       <a href="https://qet.de/marktplatz/anbieter/?id=22697027-e890-4dad-a1d3-9f3617b5243d" target="_blank" rel="noopener" style="align-self:center;"><img src="https://qet.de/badge/qet-badge-c.svg" width="186" height="44" alt="Part of the QET Community – für eine bessere Arbeitswelt" style="display:block;"></a>
       <div style="display:flex;gap:24px;">
@@ -399,6 +409,8 @@
 
 (function(){
   var translations = {
+    n_sales_p: { de:"Unser Serviceteam von Kaden Global berät Sie bei Fragen zu Bestellungen und Abrechnung.", en:"Our service team at Kaden Global advises you on questions about orders and billing.", ro:"Echipa noastră de service de la Kaden Global vă consiliază în privința comenzilor și a facturării.", tr:"Kaden Global hizmet ekibimiz siparişler ve faturalandırmayla ilgili sorularınızda size yardımcı olur." },
+    n_phone: { de:"Telefon", en:"Phone", ro:"Telefon", tr:"Telefon" },
     n_h1: { de:"Der QET Kompass. Die Software, mit der Kultur gesteuert wird.", en:"The QET Compass. The software for managing culture." , ro:"QET Compass. Software-ul cu care se conduce cultura.", tr:"QET Compass. Kültürü yöneten yazılım." },
     n_hero_p: { de:"60+1 Kriterien in den drei Werten Qualität, Ethik und Transparenz – verdichtet zu einem QET-Index, den Ihr ganzes Unternehmen versteht. Der Videokurs ist inklusive.", en:"60+1 criteria across the three values quality, ethics and transparency – condensed into one QET Index your whole company understands. The video course is included." , ro:"60+1 criterii în cele trei valori calitate, etică și transparență – condensate într-un QET Index pe care îl înțelege întreaga companie. Cursul video este inclus.", tr:"Kalite, etik ve şeffaflık değerlerinde 60+1 kriter – tüm şirketinizin anladığı tek bir QET Endeksi'nde özetlenir. Video kurs dahildir." },
     n_film_p: { de:"In wenigen Minuten: vom ersten Test bis zum QET-Index. Verfügbar in Deutsch, Englisch, Türkisch und Rumänisch.", en:"In a few minutes: from the first test to the QET Index. Available in German, English, Turkish and Romanian." , ro:"În câteva minute: de la primul test la QET Index. Disponibil în germană, engleză, turcă și română.", tr:"Birkaç dakikada: ilk testten QET Endeksi'ne. Almanca, İngilizce, Türkçe ve Rumence olarak mevcut." },
