@@ -44,6 +44,7 @@
   .navlink:hover{text-decoration:underline;}
   .navlink[aria-current="page"]{border-bottom:2px solid var(--c-audit);}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  sup{line-height:0}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 26px;border-radius:6px;font:600 17px "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;border:1.5px solid transparent;}
   .btn-primary{background:var(--c-audit);color:#FFFFFF;}
   .btn-primary:hover{background:#1748C4;}
@@ -323,6 +324,21 @@
     </div>
   </section>
 
+  <!-- PROSPEKT ZUM DOWNLOAD -->
+  <section class="wrap" id="prospekt" style="padding-top:72px;">
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;background:var(--mist,#F3F5F9);border-radius:12px;padding:32px;">
+      <a data-pdf href="/prospekt/QET-Kompass-Prospekt-DE.pdf" download style="flex:none;display:block;line-height:0;box-shadow:0 12px 32px -12px rgba(11,18,32,.45);border-radius:4px;overflow:hidden;">
+        <img data-cover src="/prospekt/cover-de.jpg" width="150" height="212" alt="" style="width:150px;height:auto;display:block;">
+      </a>
+      <div style="flex:1 1 320px;min-width:0;">
+        <div class="kicker" data-i18n="n_pdf_k">Prospekt · 8 Seiten · PDF</div>
+        <h2 style="font-weight:800;font-size:30px;margin:10px 0 0;" data-i18n="n_pdf_h">Der QET Kompass zum Mitnehmen</h2>
+        <p style="margin:10px 0 0;color:var(--ink-soft,#36415A);max-width:560px;" data-i18n="n_pdf_p">Alles Wichtige auf acht Seiten: Vorteile, System, Software und Preise. Zum Lesen, Weiterleiten und Ausdrucken (DIN A4).</p>
+        <a class="btn btn-primary" data-pdf href="/prospekt/QET-Kompass-Prospekt-DE.pdf" download style="margin-top:18px;display:inline-flex;"><span data-i18n="n_pdf_b">Prospekt herunterladen</span>&nbsp;<span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- EINE MARKE · VIER BEREICHE -->
   <section class="wrap" style="padding-top:72px;padding-bottom:72px;display:flex;flex-direction:column;gap:24px;">
     <div class="kicker" data-i18n="n_ar_k">Eine Marke · vier Bereiche · ein Marktplatz</div>
@@ -415,6 +431,10 @@
 
 (function(){
   var translations = {
+    n_pdf_k: { de:"Prospekt · 8 Seiten · PDF", en:"Brochure · 8 pages · PDF", tr:"Broşür · 8 sayfa · PDF", ro:"Broșură · 8 pagini · PDF" },
+    n_pdf_h: { de:"Der QET Kompass zum Mitnehmen", en:"The QET Compass to take away", tr:"Yanınızda götürmek için QET Compass", ro:"QET Compass de luat cu dumneavoastră" },
+    n_pdf_p: { de:"Alles Wichtige auf acht Seiten: Vorteile, System, Software und Preise. Zum Lesen, Weiterleiten und Ausdrucken (DIN A4).", en:"Everything important on eight pages: benefits, system, software and prices. To read, forward and print (A4).", tr:"Önemli olan her şey sekiz sayfada: avantajlar, sistem, yazılım ve fiyatlar. Okumak, iletmek ve yazdırmak için (A4).", ro:"Tot ce contează pe opt pagini: avantaje, sistem, software și prețuri. Pentru citit, trimis mai departe și tipărit (A4)." },
+    n_pdf_b: { de:"Prospekt herunterladen", en:"Download brochure", tr:"Broşürü indir", ro:"Descărcați broșura" },
     n_sales_p: { de:"Unser Serviceteam von Kaden Global berät Sie bei Fragen zu Bestellungen und Abrechnung.", en:"Our service team at Kaden Global advises you on questions about orders and billing.", ro:"Echipa noastră de service de la Kaden Global vă consiliază în privința comenzilor și a facturării.", tr:"Kaden Global hizmet ekibimiz siparişler ve faturalandırmayla ilgili sorularınızda size yardımcı olur." },
     n_phone: { de:"Telefon", en:"Phone", ro:"Telefon", tr:"Telefon" },
     n_ki_badge: { de:"KI-generiert", en:"AI-generated", ro:"Generat cu IA", tr:"Yapay zekâ üretimi" },
@@ -689,6 +709,9 @@
       }
     });
     document.documentElement.setAttribute('lang', lang);
+    var L = (['de','en','tr','ro'].indexOf(lang) > -1 ? lang : 'en');
+    document.querySelectorAll('[data-pdf]').forEach(function(a){ a.setAttribute('href', '/prospekt/QET-Kompass-Prospekt-' + L.toUpperCase() + '.pdf'); });
+    document.querySelectorAll('[data-cover]').forEach(function(img){ img.setAttribute('src', '/prospekt/cover-' + L + '.jpg'); });
     updateCalc();
   }
 
