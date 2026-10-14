@@ -748,7 +748,7 @@
     });
     document.documentElement.setAttribute('lang', lang);
     document.documentElement.setAttribute('dir', ['ar','fa','ur'].indexOf(lang) > -1 ? 'rtl' : 'ltr');
-    var L = (['de','en','tr','ro'].indexOf(lang) > -1 ? lang : 'en');
+    var L = (['de','en','tr','ro','ar','az','bg','bn','bs','cs','da','el','es','et','fa','fi','fr','hi','hr','hu','id','it','ja','ko','lt','lv','mk','nb','nl','pl','pt','ru','sk','sl','sr','sv','uk','ur','vi','zh'].indexOf(lang) > -1 ? lang : 'en');
     document.querySelectorAll('[data-pdf]').forEach(function(a){ a.setAttribute('href', '/prospekt/QET-Kompass-Prospekt-' + L.toUpperCase() + '.pdf'); });
     document.querySelectorAll('[data-cover]').forEach(function(img){ img.setAttribute('src', '/prospekt/cover-' + L + '.jpg'); });
     updateCalc();
