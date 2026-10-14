@@ -60,7 +60,7 @@
   .langsel{position:relative;}
   .langsel-btn{min-height:44px;padding:0 12px;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:6px;background:none;font:500 13px "IBM Plex Mono",ui-monospace,monospace;color:var(--ink);cursor:pointer;}
   .langsel-btn:hover{border-color:var(--ink);}
-  .langsel-menu{display:none;position:absolute;top:calc(100% + 4px);right:0;min-width:160px;background:#FFFFFF;border:1px solid var(--line);border-radius:6px;box-shadow:0 12px 24px rgba(11,18,32,0.10);z-index:30;overflow:hidden;}
+  .langsel-menu{display:none;position:absolute;top:calc(100% + 4px);right:0;min-width:160px;background:#FFFFFF;border:1px solid var(--line);border-radius:6px;box-shadow:0 12px 24px rgba(11,18,32,0.10);z-index:30;overflow-y:auto;max-height:70vh;}
   .langsel-menu.open{display:block;}
   .langsel-item{display:block;width:100%;text-align:left;padding:12px 16px;border:none;border-top:1px solid var(--line-soft);background:none;}
   .langsel-item:first-child{border-top:none;}
@@ -180,6 +180,42 @@
               <button type="button" class="langbtn langsel-item" data-lang="en" data-code="EN" aria-pressed="false">EN &mdash; English</button>
               <button type="button" class="langbtn langsel-item" data-lang="tr" data-code="TR" aria-pressed="false">TR &mdash; T&uuml;rk&ccedil;e</button>
               <button type="button" class="langbtn langsel-item" data-lang="ro" data-code="RO" aria-pressed="false">RO &mdash; Rom&acirc;n&#259;</button>
+              <button type="button" class="langbtn langsel-item" data-lang="ar" data-code="AR" aria-pressed="false">AR &mdash; العربية</button>
+              <button type="button" class="langbtn langsel-item" data-lang="az" data-code="AZ" aria-pressed="false">AZ &mdash; Azərbaycanca</button>
+              <button type="button" class="langbtn langsel-item" data-lang="bn" data-code="BN" aria-pressed="false">BN &mdash; বাংলা</button>
+              <button type="button" class="langbtn langsel-item" data-lang="bs" data-code="BS" aria-pressed="false">BS &mdash; Bosanski</button>
+              <button type="button" class="langbtn langsel-item" data-lang="bg" data-code="BG" aria-pressed="false">BG &mdash; Български</button>
+              <button type="button" class="langbtn langsel-item" data-lang="zh" data-code="ZH" aria-pressed="false">ZH &mdash; 中文</button>
+              <button type="button" class="langbtn langsel-item" data-lang="hr" data-code="HR" aria-pressed="false">HR &mdash; Hrvatski</button>
+              <button type="button" class="langbtn langsel-item" data-lang="cs" data-code="CS" aria-pressed="false">CS &mdash; Čeština</button>
+              <button type="button" class="langbtn langsel-item" data-lang="da" data-code="DA" aria-pressed="false">DA &mdash; Dansk</button>
+              <button type="button" class="langbtn langsel-item" data-lang="nl" data-code="NL" aria-pressed="false">NL &mdash; Nederlands</button>
+              <button type="button" class="langbtn langsel-item" data-lang="et" data-code="ET" aria-pressed="false">ET &mdash; Eesti</button>
+              <button type="button" class="langbtn langsel-item" data-lang="fi" data-code="FI" aria-pressed="false">FI &mdash; Suomi</button>
+              <button type="button" class="langbtn langsel-item" data-lang="fr" data-code="FR" aria-pressed="false">FR &mdash; Français</button>
+              <button type="button" class="langbtn langsel-item" data-lang="el" data-code="EL" aria-pressed="false">EL &mdash; Ελληνικά</button>
+              <button type="button" class="langbtn langsel-item" data-lang="hi" data-code="HI" aria-pressed="false">HI &mdash; हिन्दी</button>
+              <button type="button" class="langbtn langsel-item" data-lang="hu" data-code="HU" aria-pressed="false">HU &mdash; Magyar</button>
+              <button type="button" class="langbtn langsel-item" data-lang="id" data-code="ID" aria-pressed="false">ID &mdash; Bahasa Indonesia</button>
+              <button type="button" class="langbtn langsel-item" data-lang="it" data-code="IT" aria-pressed="false">IT &mdash; Italiano</button>
+              <button type="button" class="langbtn langsel-item" data-lang="ja" data-code="JA" aria-pressed="false">JA &mdash; 日本語</button>
+              <button type="button" class="langbtn langsel-item" data-lang="ko" data-code="KO" aria-pressed="false">KO &mdash; 한국어</button>
+              <button type="button" class="langbtn langsel-item" data-lang="lv" data-code="LV" aria-pressed="false">LV &mdash; Latviešu</button>
+              <button type="button" class="langbtn langsel-item" data-lang="lt" data-code="LT" aria-pressed="false">LT &mdash; Lietuvių</button>
+              <button type="button" class="langbtn langsel-item" data-lang="mk" data-code="MK" aria-pressed="false">MK &mdash; Македонски</button>
+              <button type="button" class="langbtn langsel-item" data-lang="nb" data-code="NB" aria-pressed="false">NB &mdash; Norsk</button>
+              <button type="button" class="langbtn langsel-item" data-lang="fa" data-code="FA" aria-pressed="false">FA &mdash; فارسی</button>
+              <button type="button" class="langbtn langsel-item" data-lang="pl" data-code="PL" aria-pressed="false">PL &mdash; Polski</button>
+              <button type="button" class="langbtn langsel-item" data-lang="pt" data-code="PT" aria-pressed="false">PT &mdash; Português</button>
+              <button type="button" class="langbtn langsel-item" data-lang="ru" data-code="RU" aria-pressed="false">RU &mdash; Русский</button>
+              <button type="button" class="langbtn langsel-item" data-lang="sr" data-code="SR" aria-pressed="false">SR &mdash; Српски</button>
+              <button type="button" class="langbtn langsel-item" data-lang="sk" data-code="SK" aria-pressed="false">SK &mdash; Slovenčina</button>
+              <button type="button" class="langbtn langsel-item" data-lang="sl" data-code="SL" aria-pressed="false">SL &mdash; Slovenščina</button>
+              <button type="button" class="langbtn langsel-item" data-lang="es" data-code="ES" aria-pressed="false">ES &mdash; Español</button>
+              <button type="button" class="langbtn langsel-item" data-lang="sv" data-code="SV" aria-pressed="false">SV &mdash; Svenska</button>
+              <button type="button" class="langbtn langsel-item" data-lang="uk" data-code="UK" aria-pressed="false">UK &mdash; Українська</button>
+              <button type="button" class="langbtn langsel-item" data-lang="ur" data-code="UR" aria-pressed="false">UR &mdash; اردو</button>
+              <button type="button" class="langbtn langsel-item" data-lang="vi" data-code="VI" aria-pressed="false">VI &mdash; Tiếng Việt</button>
             </div>
           </div>
         </nav>
@@ -463,8 +499,8 @@
     n_f2p: { de:"Ein Wert für das ganze Unternehmen, mit empfohlenen nächsten Schritten je Kriterium.", en:"One score for the whole company, with recommended next steps for each criterion." , ro:"Un singur scor pentru întreaga companie, cu pași următori recomandați pentru fiecare criteriu.", tr:"Tüm şirket için tek bir puan, her kriter için önerilen sonraki adımlarla." },
     n_f3: { de:"Team-Einladungen", en:"Team invitations" , ro:"Invitații pentru echipă", tr:"Ekip davetleri" },
     n_f3p: { de:"Mitarbeiter, Kunden und Partner einladen. Jeder sieht sein Ergebnis und das anonymisierte Teambild.", en:"Invite employees, customers and partners. Everyone sees their own result and the anonymised team picture." , ro:"Invitați angajați, clienți și parteneri. Fiecare își vede propriul rezultat și imaginea anonimizată a echipei.", tr:"Çalışanları, müşterileri ve iş ortaklarını davet edin. Herkes kendi sonucunu ve anonimleştirilmiş ekip tablosunu görür." },
-    n_f4: { de:"Vier Sprachen, jedes Gerät", en:"Four languages, every device" , ro:"Patru limbi, orice dispozitiv", tr:"Dört dil, her cihaz" },
-    n_f4p: { de:"Deutsch, Englisch, Türkisch, Rumänisch. Installierbar auf Desktop und Smartphone.", en:"German, English, Turkish, Romanian. Installable on desktop and smartphone." , ro:"Germană, engleză, turcă, română. Instalabil pe desktop și smartphone.", tr:"Almanca, İngilizce, Türkçe, Rumence. Masaüstü ve akıllı telefona kurulabilir." },
+    n_f4: { de:"40 Sprachen, jedes Gerät", en:"40 languages, every device" , ro:"40 de limbi, orice dispozitiv", tr:"40 dil, her cihaz" },
+    n_f4p: { de:"Masterclass-Videos in 40 Sprachen, jederzeit umschaltbar. Installierbar auf Desktop und Smartphone.", en:"Masterclass videos in 40 languages, switchable at any time. Installable on desktop and smartphone." , ro:"Videoclipurile Masterclass în 40 de limbi, comutabile oricând. Instalabil pe desktop și smartphone.", tr:"Masterclass videoları 40 dilde, istediğiniz zaman değiştirilebilir. Masaüstü ve akıllı telefona kurulabilir." },
     n_f5: { de:"Masterclass inklusive", en:"Masterclass included" , ro:"Masterclass inclus", tr:"Masterclass dahil" },
     n_f6: { de:"Experten zur Umsetzung", en:"Experts for implementation" , ro:"Experți pentru implementare", tr:"Uygulama için uzmanlar" },
     n_ta_h: { de:"Ein Preis je Teilnehmer. Je mehr mitmachen, desto günstiger.", en:"One price per participant. The more take part, the lower it gets." , ro:"Un preț per participant. Cu cât participă mai mulți, cu atât scade.", tr:"Katılımcı başına tek fiyat. Ne kadar çok kişi katılırsa o kadar düşer." },
@@ -643,12 +679,12 @@
     if (eachEl) { eachEl.textContent = formatPrice(eachForN(n)); }
     if (currentCycle === 'annual') {
       priceEl.textContent = formatPrice(monthly * 12 * 0.9);
-      suffixEl.textContent = (translations.suffix_year[currentLang] || translations.suffix_year.de);
+      suffixEl.textContent = (translations.suffix_year[currentLang] || translations.suffix_year.en);
       saveEl.style.display = '';
-      saveEl.textContent = (SAVE_TPL[currentLang] || SAVE_TPL.de).replace('{v}', formatPrice(monthly * 0.9));
+      saveEl.textContent = (SAVE_TPL[currentLang] || SAVE_TPL.en).replace('{v}', formatPrice(monthly * 0.9));
     } else {
       priceEl.textContent = formatPrice(monthly);
-      suffixEl.textContent = (translations.suffix_month[currentLang] || translations.suffix_month.de);
+      suffixEl.textContent = (translations.suffix_month[currentLang] || translations.suffix_month.en);
       saveEl.style.display = 'none';
     }
   }
@@ -667,12 +703,14 @@
   // Erklärfilm: Video liegt unter public/videos/qet-demo-{lang}.mp4 im qet-culture-dashboard-
   // Projekt und wird erst erreichbar, sobald die App-Domain live ist.
   var VIDEO_BASE = 'https://qet-kultur-kompass-y1mt.vercel.app/videos/qet-demo-';
+  // Den Erklärfilm gibt es auf Deutsch, Englisch, Türkisch und Rumänisch; alle anderen Sprachen zeigen die englische Fassung.
+  function videoLang(l){ return ['de','en','tr','ro'].indexOf(l) > -1 ? l : 'en'; }
   var videoEl = document.getElementById('explainer-video');
   var videoPlayBtn = document.getElementById('video-playbtn');
   var videoDeco = document.getElementById('video-deco');
   if (videoPlayBtn && videoEl) {
     videoPlayBtn.addEventListener('click', function(){
-      videoEl.src = VIDEO_BASE + currentLang + '.mp4';
+      videoEl.src = VIDEO_BASE + videoLang(currentLang) + '.mp4';
       videoEl.style.display = 'block';
       videoEl.setAttribute('controls', 'controls');
       videoPlayBtn.style.display = 'none';
@@ -686,7 +724,7 @@
     if (videoEl && videoEl.style.display === 'block') {
       var wasPlaying = !videoEl.paused;
       var t = videoEl.currentTime;
-      videoEl.src = VIDEO_BASE + lang + '.mp4';
+      videoEl.src = VIDEO_BASE + videoLang(lang) + '.mp4';
       videoEl.addEventListener('loadedmetadata', function onLoaded(){
         videoEl.currentTime = t;
         if (wasPlaying) { videoEl.play().catch(function(){}); }
@@ -696,7 +734,7 @@
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var key = el.getAttribute('data-i18n');
       var entry = translations[key];
-      var v = entry ? (entry[lang] != null ? entry[lang] : entry.de) : null;
+      var v = entry ? (entry[lang] != null ? entry[lang] : (entry.en != null ? entry.en : entry.de)) : null;
       if (v != null) { el.textContent = v; }
     });
     document.querySelectorAll('.langbtn').forEach(function(btn){
@@ -709,6 +747,7 @@
       }
     });
     document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('dir', ['ar','fa','ur'].indexOf(lang) > -1 ? 'rtl' : 'ltr');
     var L = (['de','en','tr','ro'].indexOf(lang) > -1 ? lang : 'en');
     document.querySelectorAll('[data-pdf]').forEach(function(a){ a.setAttribute('href', '/prospekt/QET-Kompass-Prospekt-' + L.toUpperCase() + '.pdf'); });
     document.querySelectorAll('[data-cover]').forEach(function(img){ img.setAttribute('src', '/prospekt/cover-' + L + '.jpg'); });
@@ -720,7 +759,7 @@
   });
 
   // Sprache aus dem Link (?lang=ro) oder vom letzten Besuch übernehmen, sonst Deutsch
-  var QET_LANGS = ['de', 'en', 'tr', 'ro'];
+  var QET_LANGS = ['de','en','tr','ro','ar','az','bn','bs','bg','zh','hr','cs','da','nl','et','fi','fr','el','hi','hu','id','it','ja','ko','lv','lt','mk','nb','fa','pl','pt','ru','sr','sk','sl','es','sv','uk','ur','vi'];
   function qetAfterLang(lang){
     try { window.localStorage.setItem('qet-lang', lang); } catch (e) {}
     var pre = lang === 'de' ? '' : '/' + lang;
@@ -728,7 +767,7 @@
       var h0 = a.getAttribute('data-href0') || a.getAttribute('href');
       var m = h0.match(/^https:\/\/qet\.de(\/.*)?$/);
       if (m) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://qet.de' + pre + (m[1] || '/')); return; }
-      if (/^https:\/\/(www\.)?qet-masterclass\.com\/?$/.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://www.qet-masterclass.com' + pre); }
+      if (/^https:\/\/(www\.)?qet-masterclass\.com\/?$/.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', 'https://www.qet-masterclass.com' + (['de','en','tr','ro'].indexOf(lang) > -1 ? pre : '/en')); }
       if (/^https:\/\/(qet-kultur-kompass[^\/]*\.vercel\.app|app\.qet-compass\.com)\//.test(h0)) { a.setAttribute('data-href0', h0); a.setAttribute('href', h0.split('?')[0] + '?lang=' + lang); }
     });
   }
@@ -758,7 +797,20 @@
       });
     });
   }
-  var _applyLang = applyLang; applyLang = function(l){ _applyLang(l); qetReg(); };
+  // Weitere Sprachen (außer DE/EN/TR/RO) liegen als Sprachpaket unter /i18n/<code>.json und werden bei Bedarf geladen.
+  var _loaded = { de:1, en:1, tr:1, ro:1 };
+  function loadPack(l, done){
+    if (_loaded[l]) { done(); return; }
+    fetch('/i18n/' + l + '.json').then(function(r){ return r.ok ? r.json() : null; }).then(function(p){
+      if (p) {
+        Object.keys(p.t || {}).forEach(function(k){ (translations[k] = translations[k] || {})[l] = p.t[k]; });
+        if (p.save) { SAVE_TPL[l] = p.save; }
+        _loaded[l] = 1;
+      }
+      done();
+    }).catch(function(){ done(); });
+  }
+  var _applyLang = applyLang; applyLang = function(l){ loadPack(l, function(){ _applyLang(l); qetReg(); }); };
   applyLang(startLang);
   qetAfterLang(startLang);
   updateCalc();
