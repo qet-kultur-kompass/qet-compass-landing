@@ -230,6 +230,11 @@
    "permanent": true
   },
   {
+   "source": "/",
+   "destination": "https://qet.de/compass",
+   "permanent": true
+  },
+  {
    "source": "/:path*",
    "destination": "https://qet.de/compass",
    "permanent": true
