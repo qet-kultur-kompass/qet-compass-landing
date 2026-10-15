@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    { "source": "/prospekt/QET-Kompass-Prospekt-(?<code>[A-Z]{2})\\.pdf", "destination": "https://qet.de/compass/prospekt/QET-Compass-Prospekt-:code.pdf", "permanent": true },
+    { "source": "/prospekt/:file*", "destination": "https://qet.de/compass/prospekt/:file*", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "de" }], "destination": "https://qet.de/compass", "permanent": true },
+    { "source": "/", "has": [{ "type": "query", "key": "lang", "value": "(?<l>ar|az|bg|bn|bs|cs|da|el|en|es|et|fa|fi|fr|hi|hr|hu|id|it|ja|ko|lt|lv|mk|nb|nl|pl|pt|ro|ru|sk|sl|sr|sv|tr|uk|ur|vi|zh)" }], "destination": "https://qet.de/:l/compass", "permanent": true },
+    { "source": "/:path*", "destination": "https://qet.de/compass", "permanent": true }
+  ]
+}
